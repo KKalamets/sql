@@ -1,0 +1,48 @@
+databasei loomine
+sqlite3 epood_kkalamets
+.databases
+
+tabeli loomine
+create table kkalamets(
+id integer primary key autoincrement,
+first_name varchar(255) not null,
+last_name varchar(255) not null,
+email varchar(255) not null,
+car_make varchar (255) not null,
+car_model varchar (255) not null,
+car_year year not null,
+car_price decimal(9,2) not null);
+
+andmete sisestamine
+insert into kkalamets(first_name,last_name,email,car_make,car_model,car_year,car_price)
+   ...> values('Kert','Kalamets','kalametskert@gmail.com','volvo','V70',2000,7812795.28),
+   ...> ('imre','tard','imretard@gmail.com','ford','focus',1650,795.50),
+   ...> ('Erik','Teppan','eteppan@gmail.com','lennuk','A-10 warthog',2017,9999999.99);
+   
+andmete väljastamine
+select * from kkalamets
+OUTPUT:
+1|Kert|Kalamets|kalametskert@gmail.com|volvo|V70|2000|7812795.28
+2|imre|tard|imretard@gmail.com|ford|focus|1650|795.5
+3|Erik|Teppan|eteppan@gmail.com|lennuk|A-10 warthog|2017|9999999.99
+
+csv faili import
+.mode csv
+.import 'C:\Users\it21\Downloads\kkalamets.csv' kkalamets
+
+OUTPUT kuskil keskel:
+443,Bruce,Frye,bfryeca@noaa.gov,Lotus,Exige,2004,7922277
+444,Coleen,McGlynn,cmcglynncb@last.fm,Mercury,Mountaineer,2009,7690774.64
+445,Jan,Egdal,jegdalcc@qq.com,Nissan,Altima,2011,6579113
+446,Rafe,Ghost,rghostcd@abc.net.au,Lexus,LX,1996,5950980.83
+447,Heda,Lang,hlangce@zimbio.com,Ford,Ranger,2002,4976940
+448,Jackquelin,Samme,jsammecf@npr.org,Lotus,Esprit,1985,902558.7
+449,Hercule,Eliasson,heliassoncg@ustream.tv,Chevrolet,"Monte Carlo",2002,739375.91
+450,Minnie,Angus,mangusch@admin.ch,Honda,Prelude,1997,4071313.46
+451,Dionis,Kitto,dkittoci@foxnews.com,Infiniti,FX,2011,4364585
+452,Hope,Bragge,hbraggecj@sourceforge.net,BMW,"3 Series",1992,8149906.68
+453,Ewan,Haxby,ehaxbyck@prnewswire.com,Volvo,C70,2009,3938979.32
+454,Lorenza,Downing,ldowningcl@php.net,Ford,"Club Wagon",1998,8190629.75
+455,Adaline,"O'Leahy",aoleahycm@clickbank.net,Mercedes-Benz,CLK-Class,2002,5910867.24
+456,Jerrylee,Elcum,jelcumcn@forbes.com,Dodge,Avenger,1995,7905317
+457,Tedd,Beardsdale,tbeardsdaleco@cafepress.com,Corbin,Sparrow,1999,1782701.97

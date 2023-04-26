@@ -1,0 +1,98 @@
+.open epood_kkalamets
+select * from kkalamets where id = 1;
+OUTPUT:
+1|Kert|Kalamets|kalametskert@gmail.com|volvo|V70|2000|7812795.28
+
+muutmine
+update kkalamets set car_make='Zaporožets' where id = 1;
+select * from kkalamets where id = 1;
+OUTPUT:
+1|Kert|Kalamets|kalametskert@gmail.com|Zaporožets|V70|2000|7812795.28
+
+select * from kkalamets where car_make = 'Cadillac';
+OUTPUT:
+11|Kim|Hingeley|khingeleya@aboutads.info|Cadillac|CTS|2007|6321282.39
+69|Terence|Moulton|tmoulton1w@ft.com|Cadillac|CTS|2009|2806519.44
+73|Gus|Crownshaw|gcrownshaw20@google.co.jp|Cadillac|Seville|1998|5634931.12
+113|Alysa|Tipens|atipens34@simplemachines.org|Cadillac|XLR-V|2006|890701.16
+165|Elysia|Mossom|emossom4k@last.fm|Cadillac|Fleetwood|1994|1643014.15
+168|Corella|Isacsson|cisacsson4n@godaddy.com|Cadillac|Escalade EXT|2010|6939721
+180|Lotta|Mustarde|lmustarde4z@adobe.com|Cadillac|Seville|2001|3475771
+211|Booth|Prop|bprop5u@cafepress.com|Cadillac|SRX|2005|2914668
+375|Ardith|Kemsley|akemsleyae@goodreads.com|Cadillac|DTS|2009|4879426.95
+377|Bruis|Bomfield|bbomfieldag@baidu.com|Cadillac|CTS|2009|5459840.03
+392|Batsheva|Gibbon|bgibbonav@ed.gov|Cadillac|SRX|2005|34643.11
+435|Hazel|Yewen|hyewenc2@usnews.com|Cadillac|Seville|1994|4451969
+524|Cristine|Orrom|corromej@ibm.com|Cadillac|CTS|2012|8143222.28
+542|Devonna|Newlin|dnewlinf1@issuu.com|Cadillac|Seville|1994|1714210.58
+677|Langston|Felderer|lfeldereris@163.com|Cadillac|STS|2005|4575353.39
+742|Rae|Trymme|rtrymmekl@reddit.com|Cadillac|Seville|1993|9463425
+761|Frans|Aickin|faickinl4@tamu.edu|Cadillac|CTS-V|2006|7082362.69
+778|Fraser|Kunert|fkunertll@youtu.be|Cadillac|SRX|2008|6355663.53
+802|Laureen|Alflatt|lalflattm9@e-recht24.de|Cadillac|Escalade EXT|2003|5189888
+885|Selie|Glendenning|sglendenningok@nyu.edu|Cadillac|Eldorado|1992|6407591.35
+899|John|Bernaldo|jbernaldooy@umn.edu|Cadillac|DeVille|2003|9554822
+979|Delcina|Learmouth|dlearmouthr6@cnet.com|Cadillac|DTS|2006|6238291
+
+update kkalamets set car_make='Citroën' where car_make='Cadillac';
+
+select * from kkalamets where car_make = 'Cadillac';
+OUTPUT: puudub kuna kõik on muudetud
+
+select * from kkalamets where id in(5,10,15);
+OUTPUT:
+5|Gerianna|Ennever|gennever4@ucoz.ru|Volvo|XC90|2010|9709426
+10|Pete|Bowne|pbowne9@tripod.com|Bentley|Continental Flying Spur|2007|6935455.16
+15|Suzann|Niave|sniavee@uiuc.edu|Chrysler|Town & Country|2009|8200497.73
+
+delete from kkalamets where id in (5,10,15);
+select * from kkalamets where id between 0 and 20;
+OUTPUT:
+1|Kert|Kalamets|kalametskert@gmail.com|Zaporožets|V70|2000|7812795.28
+2|imre|tard|imretard@gmail.com|ford|focus|1650|795.5
+3|Erik|Teppan|eteppan@gmail.com|lennuk|A-10 warthog|2017|9999999.99
+4|Ameline|March|amarch3@aboutads.info|Mercury|Cougar|1991|1509417.69
+6|Munmro|Watkiss|mwatkiss5@google.ca|Toyota|Venza|2012|4369101
+7|Marjorie|Mailes|mmailes6@nps.gov|Chevrolet|Blazer|1996|3997649.06
+8|Tobit|Gentric|tgentric7@wikipedia.org|GMC|Yukon XL 2500|2003|9585985
+9|Xever|Pering|xpering8@yelp.com|Volkswagen|Type 2|1991|2428535
+11|Kim|Hingeley|khingeleya@aboutads.info|Citro?n|CTS|2007|6321282.39
+12|Perkin|Hurford|phurfordb@people.com.cn|Lotus|Elise|2008|8296136.2
+13|Graham|Weatherley|gweatherleyc@histats.com|Chevrolet|Aveo|2011|3446444.74
+14|Katrinka|Coniff|kconiffd@arizona.edu|GMC|Yukon|1996|9292699
+16|Farrand|Girone|fgironef@g.co|GMC|Yukon XL 2500|2012|8692419
+17|Kendra|Coddrington|kcoddringtong@blogs.com|Dodge|Aries|1981|8078983
+18|Dot|Leander|dleanderh@rakuten.co.jp|Dodge|D250 Club|1993|3452467.71
+19|Mattie|Matula|mmatulai@oaic.gov.au|Chevrolet|Camaro|1976|8856889
+20|Hali|Element|helementj@amazon.com|Chevrolet|Astro|1995|3664756.25
+
+Select id,last_name,car_make,car_year from kkalamets order by id;
+OUTPUT:
+1|Kalamets|Zaporožets|2000
+2|tard|ford|1650
+3|Teppan|lennuk|2017
+4|March|Mercury|1991
+6|Watkiss|Toyota|2012
+7|Mailes|Chevrolet|1996
+8|Gentric|GMC|2003
+9|Pering|Volkswagen|1991
+11|Hingeley|Citro?n|2007
+jne
+
+select car_make from kkalamets where last_name like 'k%' order by car_year limit 10;
+OUTPUT:
+Ford
+Chevrolet
+Saab
+Mazda
+Buick
+Porsche
+Audi
+Buick
+Lexus
+Dodge
+
+select * from kkalamets where car_make = 'Porsche' and car_price > 3000000 limit 2;
+OUTPUT:
+321|Lenard|Matevosian|lmatevosian8w@vistaprint.com|Porsche|Cayman|2009|6466755
+329|Anetta|Tickner|atickner94@cmu.edu|Porsche|928|1989|6367643
